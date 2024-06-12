@@ -13,3 +13,5 @@ Use common shorthand where applicable.
 Add an HTML form to collect the names and emails of interested visitors. 
 It should have a submit button and the form's action will take the user to another HTML page.
 Note: the form does not actually need to collect information! You can direct the user to another HTML page by assigning a value to the <form>'s action attribute.
+
+Please upload your files (Picasso.html, external.css, formsubmitted.html) to Canvas or a GitHub link (make sure it is set to public).

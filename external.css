@@ -1,11 +1,126 @@
-#square {
-    width: 100px;
-    height: 100px;
-    background: red;
+body {
+    font-family: Arial, sans-serif;
 }
 
-#rectangle {
-    width: 200px;
+/* container properties, define grid display, width, numColumns, numRows, and area layout */
+.container {
+    display: grid;
+    width: 900px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 300px;
+    grid-template-areas: 
+        'box1 box2 box3' /* grid areas are named below in each element's styling */
+        'box4 box4 box4';
+    row-gap: 2px;
+    column-gap: 2px;
+}
+
+/* cirle styling */
+.circle1 {
+    position: absolute; /* this places element in top left corner of page */
+    margin: 120px; /* used margin to adjust location of circle*/
+    background-color: chartreuse;
+    border: solid black 2px;
+    border-radius: 50%; /* giving object a 50% radius creates a circle */
     height: 100px;
-    background: blue;
+    width: 100px;
+    display: flex;
+    z-index: 1; /* z index determines what appears on top, "bring to front" */
+}
+
+.circle2 {
+    position: absolute;
+    margin: 290px;
+    background-color: rgb(255, 196, 0);
+    border: solid black 2px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    z-index: 1;
+}
+
+.circle3 {
+    position: absolute;
+    margin-left: 700px; /* used left and top margin for placement on right side */
+    margin-top: 170px;
+    background-color: rgb(0, 255, 255);
+    border: solid black 2px;
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    display: flex;
+    z-index: 1;
+}
+
+/* square styling */
+.box1 {
+    background-color: rgb(0, 238, 255);
+    grid-area: box1; /* assigning a grid "name" used to index position in grid up top */
+    border: solid black 2px;
+    border-radius: 10px;
+}
+
+.box2 {
+    background-color: hsla(221, 95%, 48%, 0.842);
+    grid-area: box2;
+    border: solid black 2px;
+    border-radius: 10px;
+}
+
+.box3 {
+    background-color: rgb(7, 216, 7);
+    grid-area: box3;
+    border: solid black 2px;
+    border-radius: 10px;
+}
+
+.box4 {
+    background-color: rgb(216, 7, 171);
+    grid-area: box4;
+    border: solid black 2px;
+    border-radius: 10px;
+}
+
+/* contact form styling */
+.form {
+    margin-top: 2px;
+    background-color: #ec9d9d;
+    padding: 20px;
+    border: solid black 2px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+/* media queries for responsiveness */
+/* basically, when the viewport is less than 600px, update these styles from previous setting */
+@media (max-width: 600px) { /* desktop first */
+    .container {
+        width: 600px;
+        grid-template-rows: 150px 100px;
+    }
+    .circle1 {
+        margin: 60px;
+        height: 50px;
+        width: 50px;
+    }
+    .circle2 {
+        margin: 145px;
+        height: 30px;
+        width: 30px;
+    }
+    .circle3 {
+        margin-left: 350px;
+        margin-top: 85px;
+        height: 90px;
+        width: 90px;
+    }
 }
